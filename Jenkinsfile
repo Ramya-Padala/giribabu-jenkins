@@ -8,6 +8,7 @@ pipeline {
         npm build
         sh "
       }
+    }
       stage("deploy") {
       steps {
         sh ''
@@ -15,3 +16,5 @@ pipeline {
           docker run -d --name cal1 -p 8080:8080 my-project:v1
       }
       }
+  }
+}
