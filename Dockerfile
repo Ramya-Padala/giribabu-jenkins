@@ -1,7 +1,8 @@
 From node:15
-WORKDIR /app .
+WORKDIR /app
 COPY package.json .
-RUN apt install
+RUN npm install
+COPY . .
 EXPOSE 8080
 CMD["npm","start"]
 
