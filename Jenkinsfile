@@ -11,5 +11,7 @@ pipeline {
       stage("deploy") {
       steps {
         sh ''
-        sudo docker build -t 
-        
+        docker build -t my-project:v1 .
+          docker run -d --name cal1 -p 8080:8080 my-project:v1
+      }
+      }
