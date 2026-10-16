@@ -3,19 +3,19 @@ pipeline {
   stages {
     stage("build") {
       steps {
-        sh ''
+        sh '''
         npm install
-        npm build
-        ''
+        npm run build
+        '''
       }
     }
       stage("deploy") {
       steps {
-        sh ''
+        sh '''
         docker build -t my-project:v1 .
            docker rm -f cal1 || true
           docker run -d --name cal1 -p 8080:8080 my-project:v1
-        ''
+        '''
       }
       }
   }
